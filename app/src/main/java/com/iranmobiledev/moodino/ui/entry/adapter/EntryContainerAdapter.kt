@@ -1,4 +1,4 @@
-package com.iranmobiledev.moodino.ui.entries.adapter
+package com.iranmobiledev.moodino.ui.entry.adapter
 
 import android.annotation.SuppressLint
 import android.content.Context
@@ -13,7 +13,6 @@ import com.iranmobiledev.moodino.data.Entry
 import com.iranmobiledev.moodino.utlis.EntryEventListener
 import saman.zamani.persiandate.PersianDate
 import saman.zamani.persiandate.PersianDateFormat
-
 class EntryContainerAdapter(
     private val context: Context,
     private val entriesList: MutableList<MutableList<Entry>>,

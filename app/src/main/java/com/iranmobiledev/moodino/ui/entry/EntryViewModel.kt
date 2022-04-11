@@ -1,4 +1,4 @@
-package com.iranmobiledev.moodino.ui.entries
+package com.iranmobiledev.moodino.ui.entry
 
 import android.util.Log
 import androidx.lifecycle.MutableLiveData

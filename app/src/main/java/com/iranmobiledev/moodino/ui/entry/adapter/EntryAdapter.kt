@@ -1,4 +1,4 @@
-package com.iranmobiledev.moodino.ui.entries.adapter
+package com.iranmobiledev.moodino.ui.entry.adapter
 
 import android.annotation.SuppressLint
 import android.content.Context
@@ -16,8 +16,7 @@ import com.iranmobiledev.moodino.utlis.EntryEventListener
 import org.koin.core.component.KoinComponent
 
 
-class EntryAdapter(private val entryEventListener: EntryEventListener, val entries : MutableList<Entry>, private val context: Context) : RecyclerView.Adapter<EntryAdapter.ViewHolder>(), KoinComponent {
-
+class EntryAdapter(private val entryEventLister: EntryEventListener, val entries: MutableList<Entry>, private val context: Context) : RecyclerView.Adapter<EntryAdapter.ViewHolder>(), KoinComponent {
 
     inner class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView){
 
@@ -37,8 +36,8 @@ class EntryAdapter(private val entryEventListener: EntryEventListener, val entri
             moreIcon.setOnClickListener {
                 val popupMenu = PopupMenu(context, it)
                 popupMenu.inflate(R.menu.popup_menu)
-                popupMenu.setOnMenuItemClickListener {
-                    entryEventListener.deleteEntry(entry)
+                popupMenu.setOnMenuItemClickListener { menuItem ->
+                    entryEventLister.deleteEntry(entry)
                 }
                 popupMenu.show()
             }
